@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>32RE.html</title>
+	</head>
+	<body>
+		
+		아이디 : <input type="text" id="memid" name="memid">
+
+		[<span id="idspan"></span>]
+
+		<br><br>
+		패스워드 : <input type="password" id="mempwd" name="memwd">
+		<br><br>
+		패스워드 확인 : <input type="password" id="mempwd2" name="mempwd2">
+		<br><br>
+		
+		<button onclick="valueCheck();"> 아이디 전송 </button>
+		<script type="text/javascript">
+		function valueCheck() {
+			if(memid.value.trim() == ""){
+				alert("아이디를 입력해 주세요.");
+				//idspan.textContent = "<font color=red>아이디를 입력해 주세요.</font>";//텍스트만 삽입.html인식이 안됨.
+				idspan.innerHTML="<font color=red>아이디를 입력해주세요.</font>";//html삽입
+				return;
+			}
+			if(memid.value.trim().length <= 7){
+				alert("아이디는 8자 이상입니다.")
+				return;
+
+			}
+			if(mempwd.value.trim() == ""){
+				alert("패스워드를 입력해 주세요.");
+				return;
+
+			}
+			if(mempwd.value.trim().length <= 7){
+				alert("패스워드는 8자 이상입니다.")
+				return;
+			}
+			if(mempwd.value.trim() != mempwd2.value.trim()){
+				alert("패스워드와 패스워드 확인이 다릅니다.");
+				return;
+			}
+			alert("전송 완료");
+		}//function
+		</script>
+	</body>
+</html>

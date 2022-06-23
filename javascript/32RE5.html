@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>32RE5.html</title>
+	</head>
+	<body>
+		<h1>3자리마다 ,(콤마) 찍기</h1>
+		<input type="text" id="txt2" name="txt2">
+		<button onclick="addComma();"> add comma </button>
+		<script type="text/javascript">
+		function addComma() {
+			let origin = txt2.value; //origin 변수 선언
+			let copy = "";
+			for (let i = origin.length -1, no = 1; i >= 0; i--, no++) { //뒤에서부터 콤마를 줘야함.
+				//alert(origin.charAt(i % 3)); //i를 3으로 나눌때 나머지가 0인 자리
+				//copy = copy + origin.charAt(i);//이렇게 하면 역순
+				copy = origin.charAt(i) + copy;
+				if(i !=0 && no % 3 == 0) copy = "," + copy;
+			}//for
+			//alert(copy);
+			txt2.value=copy;
+			
+		}//function
+		</script>
+	
+	</body>
+</html>
