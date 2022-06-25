@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>34date_diff.html</title>
+	</head>
+	<body>
+		<input type="date" id="datetxt" name="datetxt">
+		<button onclick="dateDiff();"> 입력 날짜와 오늘 날짜 간의 차이 구하기 </button>
+		
+		<script type="text/javascript">
+		let today = new Date();
+		function dateDiff() {
+			let testDate = new Date(datetxt.value);
+			let diff = today.getTime() - testDate.getTime();
+			alert(diff / 60 / 60 / 24 / 1000); //60초 60분 24시간 ms니까 1000을 제거
+		}	
+		</script>
+	</body>
+</html>
