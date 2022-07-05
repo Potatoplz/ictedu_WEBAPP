@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>25hmenu_dropdown.html</title>
+		<style type="text/css">
+		ul { 
+			list-style : none;
+			padding : 0; /*왼쪽 10px정도 떨어진 거 제거*/
+			background-color : lightgray;
+			overflow : hidden;
+		}
+		
+		li a { 
+			text-decoration : none; /*밑줄 제거*/
+			color : black; /*글자 색깔 변경*/
+			display : block; /*링크가 블락 단위로 변경됨*/
+			padding : 20px 50px 20px 50px; /*간격 조절*/
+		}
+		li {
+			float : left; /*일렬로 정렬됨*/
+		}
+		li a:hover {
+			background-color : orange; /*마우스 오버*/
+		}
+		
+		.dropdown-contents{
+			display : none; /* 해당 클래스 영역 사라짐 */
+			min-width : 150px;
+			position : absolute; /*절대 위치 : li의 안쪽*/
+		}
+		
+		.dropdown:hover .dropdown-contents {
+			display : block; /*마우스오버시 메뉴 나옴*/
+		
+		}
+	
+		</style>
+		
+	</head>
+	<body>
+		<ul>
+			<li><a href="http://www.naver.com/" target="_blank">NAVER</a></li>
+			<li><a href="http://www.google.com/" target="_blank">GOOGLE</a></li>
+			<li><a href="http://www.jandi.com/" target="_blank">JANDI</a></li>
+			<li><a href="http://www.youtube.com/" target="_blank">YOUTUBE</a></li>
+			
+			<li class="dropdown">
+				<a href="#">DROP DOWN MENU</a> <!-- # : 현재 페이지 -->
+				<div class="dropdown-contents">
+					<a href="#">DROP DOWN FIRST</a>
+					<a href="#">DROP DOWN SECOND</a>
+					<a href="#">DROP DOWN THIRD</a>
+				</div>
+			</li>
+		
+		</ul>	
+	</body>
+</html>
