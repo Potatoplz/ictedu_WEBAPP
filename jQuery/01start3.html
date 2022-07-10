@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>01start3.html</title>
+	<script src="./jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+	
+	<button id="testBtn1"> this is test jquery button </button>
+	
+	<script>
+	$(document).ready(function() {
+		$("#testBtn1").click(function() {
+			alert( $("#testBtn1").text() );
+		});
+	});
+	</script>
+	
+	</body>
+</html>
