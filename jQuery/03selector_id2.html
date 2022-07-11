@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>03selector_id2.html</title>
+		<script src="./jquery-3.6.0.min.js"></script>		
+		<style type="text/css">
+		
+		#baguni {
+			height : 100px;
+			border : 2px solid blue;		
+		}
+		
+		</style>
+	</head>
+	<body>
+		<h3> id selector : html의 id에 접근 </h3>
+		<div id="baguni"></div>
+		<input type="checkbox" value="죠스바">죠스바
+		<input type="checkbox" value="바밤바">바밤바
+		<input type="checkbox" value="쌍쌍바">쌍쌍바
+		<input type="checkbox" value="누가바">누가바
+		<input type="checkbox" value="설레임">설레임
+		
+		<script>
+		$(document).ready(function() {
+			
+			$("input[type=checkbox]").click(function() {
+				//alert( $(this).val() );
+				//alert( $(this).prop('checked') ); //true, false
+				
+				if( $(this).prop("checked") == true ) {
+					$("#baguni").append( $(this).val() );
+					//check할때만 값이 들어게 한다.
+				} else if ( $(this).prop("checked") == false ) {
+					let tmp = $("#baguni").text().replace( $(this).val(), "" );
+					$("#baguni").text( tmp );
+				}
+
+			});//click //checkbox를 찾는 selector1
+
+/*			
+			$(":checkbox").click(function() {
+				alert( $(this).val() );
+			});//click //checkbox를 찾는 selector2->1과 동일한 기능
+*/					
+		});//ready
+		</script>
+
+	</body>
+</html>

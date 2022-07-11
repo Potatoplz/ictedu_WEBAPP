@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>02selector_element.html</title>
+		<script src="./jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<h3>element selector : html element에 접근</h3>
+		
+		<button id="btn1"> h3의 text를 가져가자 </button>
+		<button id="btn2"> div의 text를 가져가자 </button>
+		<hr>
+		<div>
+			<img src="../javascript/dog.jpg">
+		</div>
+		
+		<script>
+		$(document).ready(function(){
+			
+			$("#btn2").click(function() {
+				alert($("div").html()); //click 하면 dog.jpg 주소 뜸
+				$("div").html("<img src='../html4/cat.png'>"); //click하면 사진 바뀜
+			});//click
+			//html() : html을 가져 오거나 집어 넣는 jqeury 함수(자바스트립트의 innerHTML)
+			
+			$("#btn1").click(function() {
+				alert($("h3").text());//html요소의 텍스트 가져오기
+				$("h3").text("Get Text Complete!");//html요소에 텍스트 집어넣기
+			});//click
+			//text() : 글자를 가져오거나 집어 넣는 jquery 함수(자바스크립트의 textContents)
+			
+		});//ready 
+		</script>
+		
+	</body>
+</html>
