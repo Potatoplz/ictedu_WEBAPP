@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>14keyup.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		
+	</head>
+	<body>
+		<h3>자바스크립트 정규식</h3>
+		숫자만 입력 받는 text 창 : <input type="text" id="numtxt">
+		<script>
+		$(document).ready(function() {
+			
+			$("#numtxt").keyup(function() {
+				//alert(event.keyCode);
+				let tmp = $("#numtxt").val().replace( /[^ 0-9 \.]/g, "");
+				$("#numtxt").val(tmp);//숫자 아니면 입력한 글자가 사라짐.
+			});//keyup
+	
+		});//ready
+		</script>
+		
+		<hr>
+		숫자만 입력 받는 text 창 : <input type="number" id="numtxt2" min="1" max="5">
+		<script>
+		$(document).ready(function() {
+			$("#numtxt2").change(function() {
+				if( $("#numtxt2").val() < 1 || $("#numtxt2").val() > 5 ){
+					alert("1에서 5까지의 수를 입력 하세요.");
+					return;
+				}
+			});//change
+		});//ready
+		</script>
+		
+		<hr>
+		숫자 + 영문 대소문자 + @ + .만 허용하는 text 창<br>
+		<input type="text" id="emailtxt">
+		<script>
+		$(document).ready(function() {
+			
+			$("#emailtxt").keyup(function() {//function이 일어나면 anonymous호출
+				
+				let tmp2 = $("#emailtxt").val().replace(/[^ a-z A-Z 0-9 @ . \.]/g, "");
+				//emailtxt 창에 들어오는 value를 replace한다. 정규식표현만 허용하고 그 외에는 없는 값으로 만든다.
+				$("#emailtxt").val(tmp2);
+		
+			}); //keyup
+		});//ready
+		</script>
+	
+	</body>
+</html>
