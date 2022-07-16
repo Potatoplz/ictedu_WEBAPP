@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>15selector_eq.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		
+	</head>
+	<body>
+	
+		<button id="eqBtn"> equal(5) </button>
+		<button id="ltBtn"> less than(5) </button>
+		<button id="gtBtn"> greater than(5) </button>
+				
+		<script>
+		$(document).ready(function() {
+			
+			$("#gtBtn").click(function() {
+				$("li:gt(5)").css("background-color", "orange");
+			});//click			
+			
+			$("#ltBtn").click(function() {//ltBtn에서 click일어나면 function 수행
+				$("li:lt(5)").css("background-color", "skyblue");
+			});//click			
+			
+			$("#eqBtn").click(function() {
+				$("li:eq(5)").css("background-color", "red");
+				//li:eq(5)면 색이 바뀐다//css : 선택된걸 보여주기 위함
+				
+			});//click
+
+		});//ready
+		</script>
+	
+		<ul>
+			<li>index 0, 1</li> 
+			<li>index 1, 2</li>
+			<li>index 2, 3</li>
+			<li>index 3, 4</li>
+			<li>index 4, 5</li>
+			<li>index 5, 6</li> 
+			<li>index 6, 7</li>
+			<li>index 7, 8</li>		
+		</ul>
+	</body>
+</html>
