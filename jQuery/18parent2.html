@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>18parent.html</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<script>
+		$(document).ready(function() {
+			$("#parentBtn").click(function() {
+				$("#apple").parent().css("background-color", "chocolate"); //parent = apple(td)의 부모는 tr = tr 전체
+			});//click
+			
+			$("#parentsBtn").click(function() {
+				$("#apple").parents().css("background-color", "beige"); //parents = apple(td)의 모든 부모 (tr~body까지)
+			});//click
+			
+			$("#parentsUntilBtn").click(function() {
+				$("#apple").parentsUntil("table").css("background-color", "aquamarine"); //부모님인데, table까지만.
+			});	//click
+			
+			$("#childrenBtn").click(function() {
+				$("tbody").children().css("background-color", "cadetblue"); //tbody만 선택, thead&tfoot엔 영향xx
+			});	//click
+			
+			$("#findBtn").click(function() {
+				$("table").find("span").css("background-color", "lightcyan"); //특정 element만 선택
+			});	//click
+			
+		});//ready
+		</script>
+		<button id="parentBtn"> direct parent of apple </button>
+		<button id="parentsBtn"> all parents of apple </button> <!-- (all)parents = 아버지, 할아버지, 증조할아버지.... -->
+		<button id="parentsUntilBtn"> parentsUntil(table) of apple </button>
+		<button id="childrenBtn"> all children of tbody </button>
+		<button id="findBtn"> find element of span </button>
+		<table>
+			<thead>
+				<tr><th>번호</th><th><span>아이디</span></th><th>전화번호</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1</td><td id="apple">apple</td><td>010</td></tr>
+				<tr><td>2</td><td >banana</td><td>011</td></tr>
+				<tr><td>3</td><td>cherry</td><td>012</td></tr>
+				<tr><td>4</td><td>melon</td><td>013</td></tr>
+				<tr><td>5</td><td>grape</td><td>014</td></tr>
+			</tbody>
+			<tfoot>
+				<tr><td colspan="3">@copyright</td></tr>
+			</tfoot>
+		</table>
+	</body>
+</html>
