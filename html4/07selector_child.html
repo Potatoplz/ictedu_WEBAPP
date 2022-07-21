@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>07selector_child.html</title>
+		
+		<style type="text/css">
+		
+		/*testCls의 자식들 중에 h2*/
+		.testCls > h2 { background-color:blue; color:white;}
+		</style>
+		
+	</head>
+	<body>
+		<h2>child selector</h2>
+		<h2> h2 : testCls 위 </h2> <!-- chlid selector와 무관 -->
+		<div class="testCls">
+			<h2> h2 : testCls 내부</h2>
+			<div>
+				<h2> h2 : testCls 내부의 div 내부 </h2> <!-- testCls의 손자 -->
+			</div>
+			<h2> h2 : testCls 내부</h2>
+		</div>	
+		<h2> h2 : testCls 아래 </h2> <!-- chlid selector와 무관 -->
+	</body>
+</html>
