@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>08selector_descendent.html</title>
+		<style type="text/css">
+		
+		.testCls h2 { background-color:orange; color:gray; }
+		
+		</style>
+		
+	</head>
+	<body>
+		<h2>descendent selector</h2>
+		<h2> h2 : testCls 위 </h2>
+		<div class="testCls">
+			<h2> h2 : testCls 내부</h2>
+			<div>
+				<h2> h2 : testCls 내부의 div 내부 </h2> <!-- 손자 -->
+				<div>
+					<h2> h2 : testCls 내부의 div 내부의 div 내부 </h2> <!-- 증손자 -->
+				</div>
+			</div>
+			<h2> h2 : testCls 내부</h2>
+		</div>
+		<h2> h2 : testCls 아래 </h2>
+
+	</body>
+</html>

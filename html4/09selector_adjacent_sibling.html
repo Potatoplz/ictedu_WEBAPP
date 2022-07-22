@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>09selector_adjacent_sibling.html</title>
+		
+		<style type="text/css">
+		/*h3 + h3 : h3 바로 옆에 있는 h3를 의미한다. (첫번째 h3는 해당하지 않음) */
+		h3 + h3 { color:pink; }		
+		</style>
+
+	</head>
+	<body>
+		<h3> adjacent sibling selector </h3>
+		<h3> heading tag 3 </h3> <!-- h3 다음에 있는 h3 -->
+		<h3> heading tag 3 </h3> <!-- h3 다음에 있는 h3 -->
+		<div>
+			<h3> heading tag 3 : div 내부 </h3>
+			<h3> heading tag 3 : div 내부 </h3> <!-- h3 다음에 있는 h3 -->
+			<h3> heading tag 3 : div 내부 </h3> <!-- h3 다음에 있는 h3 -->
+		</div>	 
+		<h3> heading tag 3 </h3>
+		<h3> heading tag 3 </h3> <!-- h3 다음에 있는 h3 -->
+		<br>
+		<h3> heading tag 3 </h3>
+	</body>
+</html>
